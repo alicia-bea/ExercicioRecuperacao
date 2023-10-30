@@ -1,0 +1,132 @@
+package mapList;
+
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+public class SistemaEscola extends Opcoes{
+	
+	private String Escola;
+	
+	
+	public void NomeDoAluno(Scanner scanner) {
+    System.out.print("Nome do aluno: ");
+        String nomeAluno = scanner.next();
+        
+        alunos.add(nomeAluno);
+            System.out.println("Aluno: " + nomeAluno + "adicionado ao sistema");
+    }
+
+    public void NomeDoProfessor(Scanner scanner) {
+    System.out.print("Nome do professor: ");
+        String nomeProfessor = scanner.next();
+        
+        Professores.add(nomeProfessor);
+            System.out.println("Professor: " + nomeProfessor + "adicionado ao sistema");
+    }
+	
+    
+	 public void ApresentarRelatorioEscola(Scanner scanner) {
+	        System.out.print("Nome do aluno: ");
+	        String nomeAluno = scanner.next();
+	        List<Turma> turmas = turmasAluno.get(nomeAluno);
+
+	        if (turmas != null) {
+	            System.out.println("Relatório do aluno: " + nomeAluno);
+	            for (Turma turma : turmas) {
+	            System.out.println(turma.getNumAlunos() + " " + turma.getNumTurmas() + " " + turma.getNome());
+	            }
+	           } 
+	        
+	            else{
+	            System.out.println("Nenhu aluno para registrada no sistema da escola");
+	        }
+	    }
+	 
+	 
+
+	    public void NumeroDeAlunos(Scanner scanner) {
+	        System.out.println("Número de alunos disponiveis:");
+	        for (int i = 0; i < alunos.size(); i++) {
+	            System.out.println((i + 1) + ". " + alunos.get(i));
+	        }
+
+	        System.out.print("Número de alunos: ");
+	        int nomeAluno = scanner.nextInt();
+
+	        if (nomeAluno > 0 && nomeAluno <= alunos.size()) {
+	            String alunos = alunos.get(alunos - 1);
+
+	            System.out.print("Quantidade de alunos desejada: ");
+	            int quantidade = scanner.nextInt();
+
+	            List<Escola> escolas = alunos.get(nomeAluno);
+
+	            if (alunos == null) {
+	            alunos = new ArrayList<>();
+	            alunos.put(nomeAluno, alunos);
+	            }
+
+	            alunos.add(new Aluno(alunos, quantidade));
+
+	            System.out.println("Você comprou " + quantidade + " " + produtoEscolhido);
+	        } else {
+	            System.out.println("Número de alunos inválido");
+	        }
+	    }
+
+
+
+	    public void GravacaoDeDadosEmArquivo(String Documento){
+	    	
+	        try (PrintWriter writer = new PrintWriter(new FileWriter(Documento))) {
+	        	
+	            for (String aluno : alunos) {
+	                writer.println("Aluno: " + aluno);
+	            }
+	            
+	            
+	            for (String professor : professores) {
+	                writer.println("Professor: " + professor);
+	            }
+	            
+	            System.out.println("Dados inserido foram salvos");
+	        } 
+	        
+	        catch (IOException e) {
+	            System.err.println("Erro na gravação de dados");
+	        }
+	    }
+
+	    
+	    public void RecuperacaoDeDados(String Documento) {
+	        try (BufferedReader reader = new BufferedReader(new FileReader(Documento))){
+	            
+	            alunos.clear();
+	            professores.clear();
+	            
+	            while ((Escola = reader.readLine()) != null) {
+	                if (Escola.startsWith("Aluno:")){
+	                	
+	                    alunos.add(Escola.substring("Aluno: ".length()));
+	                    
+	                } 
+	                
+	                else if (Escola.startsWith("Professor: ")) {
+	                    professores.add(Escola.substring("Professor: ".length()));
+	                    }
+	                 }
+	            
+	            System.out.println("Recuperação de dados realizada");
+	        } 
+	        
+	        catch (IOException e) {
+	            System.err.println("Erro na recuperação de dados");
+	        }
+	    }
+
+}
+ 
