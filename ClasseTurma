@@ -1,0 +1,46 @@
+package mapList;
+
+public class Turma {
+	
+	private Integer NumTurmas;
+	private Integer NumAlunos;
+	private String nome;
+	
+	public Turma(){
+		this.NumTurmas = 0;
+		this.NumAlunos = 0;
+		this.nome = "";
+	}
+	
+	public Turma(Integer NumTurmas, Integer NumAlunos, String nome) {
+		this.NumTurmas = NumTurmas;
+		this.NumAlunos = NumAlunos;
+		this.nome = nome;
+
+	}
+	
+	public Integer getNumTurmas() {
+		return NumTurmas;
+	}
+	
+	public void setNumTurmass(Integer NumTurmas) {
+		this.NumTurmas = NumTurmas;
+	}
+	
+	public Integer getNumAlunos() {
+		return NumAlunos;
+	}
+	
+	public void setNumAlunoss(Integer NumAlunos) {
+		this.NumAlunos = NumAlunos;
+	}
+
+	public String getNome() {
+		return nome;
+	}
+	
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+}
