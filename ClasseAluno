@@ -1,0 +1,47 @@
+package mapList;
+
+public class Aluno {
+	
+	private String nome;
+	private Integer idade;
+	private String prontuario;
+
+	
+	public Aluno(){
+		this.nome = "";
+		this.idade = 0;
+		this.prontuario = "";
+	}
+	
+	public Aluno(String nome, Integer idade, String prontuario) {
+		this.nome = nome;
+		this.idade = idade;
+		this.prontuario = prontuario;
+	}
+	
+	public String getNome() {
+		return nome;
+	}
+	
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+	
+	public Integer getIdade() {
+		return idade;
+	}
+	
+	public void set(Integer idade) {
+		this.idade = idade;
+	}
+	
+	public String getProntuario() {
+		return prontuario;
+	}
+	
+	public void setProntuario(String prontuario) {
+		this.prontuario = prontuario;
+	}
+	
+
+}
