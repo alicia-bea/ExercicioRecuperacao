@@ -1,0 +1,71 @@
+package mapList;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Scanner;
+
+public class Opcoes {
+	
+
+		   public static void main(String[] args) {
+		   Scanner scanner = new Scanner(System.in);
+		   private List<String> alunos = new ArrayList<>();
+		   private List<String> professores  = new ArrayList<>();
+		   private Map<String, List<Turma>> turmas = new HashMap<>();
+		    
+		    public static void main(String[] args) {
+		        Opcao opcao = new Opcao();
+		        Scanner scanner = new Scanner(System.in);
+		        int opcao;
+		        do {
+		        	
+		            System.out.println("Escolha uma das opções apresentadas:");
+		            System.out.println("1. Nome do aluno");
+		            
+		            System.out.println("2. Nome do professor");
+		            
+		            System.out.println("3. Apresentar relatório da escola");
+		            
+		            System.out.println("4. Número de alunos");
+		            
+		            System.out.println("5. Gravação de dados");
+		            
+		            System.out.println("6. Recuperação de dados");
+		            
+		            System.out.println("0. Sair");
+		            opcao = scanner.nextInt();
+
+		            switch (opcao) {
+		                case 1:
+		                    opcao.NomeDoAluno(scanner);
+		                    break;
+		                    
+		                case 2:
+		                    opcao.NomeDoProfessor(scanner);
+		                    break;
+		                    
+		                case 3:
+		                	opcao.realizarCompra(scanner);
+		                    break;
+		                    
+		                case 4:
+		                	opcao.mostrarRelatorioCompra(scanner);
+		                    break;
+		                    
+		                case 5:
+		                    opcao.gravarDadosEmArquivo("InformacoesEscola.txt");
+		                    break;
+		                    
+		                case 6:
+		                    opcao.recuperarDadosDeArquivo("InformacoesEscola.txt");
+		                    break;
+		                   }
+		           } 
+		        while (opcao != 0);
+		    }
+		  }
+
+	}
+
