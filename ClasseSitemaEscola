@@ -2,7 +2,9 @@ package mapList;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -24,15 +26,45 @@ public class SistemaEscola extends Opcoes{
     System.out.print("Nome do professor: ");
         String nomeProfessor = scanner.next();
         
-        Professores.add(nomeProfessor);
+        professores.add(nomeProfessor);
             System.out.println("Professor: " + nomeProfessor + "adicionado ao sistema");
     }
+    
+    
+    private static void numeroAlunosTurma(Scanner scanner) {
+        System.out.println("Nome do professor para a turma:");
+        String nomeProfessor = scanner.next();
+        Professor professor = professor.get(nomeProfessor);
+        
+        if(professor != null) {
+           Turma turma = new Turma(Professor);
+           System.out.println("Digite o nome do aluno para adicionar à turma:");
+            
+           String nomeAluno = scanner.next();
+           Aluno aluno = alunos.get(nomeAluno);
+           if aluno != null) {
+              turma.nomeAluno(aluno);
+              turma.add(turma);
+            } 
+              turma.nomeAluno(aluno);
+               
+           else 
+           {
+           System.out.println("Aluno não encontrado.");
+            }  
+            } 
+        
+        else 
+        {
+            System.out.println("Professor não encontrado.");
+        }   
+        }
 	
     
-	 public void ApresentarRelatorioEscola(Scanner scanner) {
+	 public void ApresentarRelatoriTurma(Scanner scanner) {
 	        System.out.print("Nome do aluno: ");
 	        String nomeAluno = scanner.next();
-	        List<Turma> turmas = turmasAluno.get(nomeAluno);
+	        List<Turma> turmas = nomeAluno.get(nomeAluno);
 
 	        if (turmas != null) {
 	            System.out.println("Relatório do aluno: " + nomeAluno);
@@ -45,38 +77,7 @@ public class SistemaEscola extends Opcoes{
 	            System.out.println("Nenhu aluno para registrada no sistema da escola");
 	        }
 	    }
-	 
-	 
 
-	    public void NumeroDeAlunos(Scanner scanner) {
-	        System.out.println("Número de alunos disponiveis:");
-	        for (int i = 0; i < alunos.size(); i++) {
-	            System.out.println((i + 1) + ". " + alunos.get(i));
-	        }
-
-	        System.out.print("Número de alunos: ");
-	        int nomeAluno = scanner.nextInt();
-
-	        if (nomeAluno > 0 && nomeAluno <= alunos.size()) {
-	            String alunos = alunos.get(alunos - 1);
-
-	            System.out.print("Quantidade de alunos desejada: ");
-	            int quantidade = scanner.nextInt();
-
-	            List<Escola> escolas = alunos.get(nomeAluno);
-
-	            if (alunos == null) {
-	            alunos = new ArrayList<>();
-	            alunos.put(nomeAluno, alunos);
-	            }
-
-	            alunos.add(new Aluno(alunos, quantidade));
-
-	            System.out.println("Você comprou " + quantidade + " " + produtoEscolhido);
-	        } else {
-	            System.out.println("Número de alunos inválido");
-	        }
-	    }
 
 
 
@@ -84,13 +85,13 @@ public class SistemaEscola extends Opcoes{
 	    	
 	        try (PrintWriter writer = new PrintWriter(new FileWriter(Documento))) {
 	        	
-	            for (String aluno : alunos) {
-	                writer.println("Aluno: " + aluno);
+	            for (String Aluno : alunos) {
+	                writer.println("Aluno: " + Aluno);
 	            }
 	            
 	            
-	            for (String professor : professores) {
-	                writer.println("Professor: " + professor);
+	            for (String Professor : professores) {
+	                writer.println("Professor: " + Professor);
 	            }
 	            
 	            System.out.println("Dados inserido foram salvos");
