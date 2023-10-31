@@ -8,17 +8,14 @@ import java.util.Scanner;
 
 public class Opcoes {
 	
-
-		   public static void main(String[] args) {
-		   Scanner scanner = new Scanner(System.in);
-		   private List<String> alunos = new ArrayList<>();
-		   private List<String> professores  = new ArrayList<>();
-		   private Map<String, List<Turma>> turmas = new HashMap<>();
-		    
-		    public static void main(String[] args) {
-		        Opcao opcao = new Opcao();
+	 private List<String> Aluno = new ArrayList<>();
+	   private List<String> Professor  = new ArrayList<>();
+	   private Map<String, List<Turma>> turmas = new HashMap<>();
+	
+	  public static void main(String[] args) {
+		 int opcao = new Opcoes();
 		        Scanner scanner = new Scanner(System.in);
-		        int opcao;
+		        int opcoes;
 		        do {
 		        	
 		            System.out.println("Escolha uma das opções apresentadas:");
@@ -35,31 +32,31 @@ public class Opcoes {
 		            System.out.println("6. Recuperação de dados");
 		            
 		            System.out.println("0. Sair");
-		            opcao = scanner.nextInt();
+		            opcoes = scanner.nextInt();
 
-		            switch (opcao) {
+		            switch (opcoes) {
 		                case 1:
-		                    opcao.NomeDoAluno(scanner);
+		                	opcoes.NomeDoAluno(scanner);
 		                    break;
 		                    
 		                case 2:
-		                    opcao.NomeDoProfessor(scanner);
+		                	opcoes.NomeDoProfessor(scanner);
 		                    break;
 		                    
 		                case 3:
-		                	opcao.realizarCompra(scanner);
+		                	opcoes.realizarCompra(scanner);
 		                    break;
 		                    
 		                case 4:
-		                	opcao.mostrarRelatorioCompra(scanner);
+		                	opcoes.mostrarRelatorioCompra(scanner);
 		                    break;
 		                    
 		                case 5:
-		                    opcao.gravarDadosEmArquivo("InformacoesEscola.txt");
+		                	opcoes.gravarDadosEmArquivo("InformacoesEscola.txt");
 		                    break;
 		                    
 		                case 6:
-		                    opcao.recuperarDadosDeArquivo("InformacoesEscola.txt");
+		                	opcoes.recuperarDadosDeArquivo("InformacoesEscola.txt");
 		                    break;
 		                   }
 		           } 
@@ -67,5 +64,9 @@ public class Opcoes {
 		    }
 		  }
 
-	}
+}
+
+
+
+
 
