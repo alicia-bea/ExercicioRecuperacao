@@ -8,14 +8,16 @@ import java.util.Scanner;
 
 public class Opcoes {
 	
-	 private List<String> Aluno = new ArrayList<>();
-	   private List<String> Professor  = new ArrayList<>();
-	   private Map<String, List<Turma>> turmas = new HashMap<>();
-	
-	  public static void main(String[] args) {
-		 int opcao = new Opcoes();
+		   public static void main(String[] args) {
+		   Scanner scanner = new Scanner(System.in);
+		   private List<String> alunos = new ArrayList<>();
+		   private List<String> professores  = new ArrayList<>();
+		   private Map<String, List<Turma>> turmas = new HashMap<>();
+		    
+		    public static void main(String[] args) {
+		        Opcao opcao = new Opcao();
 		        Scanner scanner = new Scanner(System.in);
-		        int opcoes;
+		        int opcao;
 		        do {
 		        	
 		            System.out.println("Escolha uma das opções apresentadas:");
@@ -23,40 +25,40 @@ public class Opcoes {
 		            
 		            System.out.println("2. Nome do professor");
 		            
-		            System.out.println("3. Apresentar relatório da escola");
+		            System.out.println("3. Número de alunos por turma");
 		            
-		            System.out.println("4. Número de alunos");
+		            System.out.println("4. Apresentar relatório da escola");
 		            
 		            System.out.println("5. Gravação de dados");
 		            
 		            System.out.println("6. Recuperação de dados");
 		            
 		            System.out.println("0. Sair");
-		            opcoes = scanner.nextInt();
+		            opcao = scanner.nextInt();
 
-		            switch (opcoes) {
+		            switch (opcao) {
 		                case 1:
-		                	opcoes.NomeDoAluno(scanner);
+		                    opcao.NomeDoAluno(scanner);
 		                    break;
 		                    
 		                case 2:
-		                	opcoes.NomeDoProfessor(scanner);
+		                    opcao.NomeDoProfessor(scanner);
 		                    break;
 		                    
 		                case 3:
-		                	opcoes.realizarCompra(scanner);
+		                	opcao.realizarCompra(scanner);
 		                    break;
 		                    
 		                case 4:
-		                	opcoes.mostrarRelatorioCompra(scanner);
+		                	opcao.mostrarRelatorioCompra(scanner);
 		                    break;
 		                    
 		                case 5:
-		                	opcoes.gravarDadosEmArquivo("InformacoesEscola.txt");
+		                    opcao.gravarDadosEmArquivo("InformacoesEscola.txt");
 		                    break;
 		                    
 		                case 6:
-		                	opcoes.recuperarDadosDeArquivo("InformacoesEscola.txt");
+		                    opcao.recuperarDadosDeArquivo("InformacoesEscola.txt");
 		                    break;
 		                   }
 		           } 
@@ -64,9 +66,5 @@ public class Opcoes {
 		    }
 		  }
 
-}
-
-
-
-
+	}
 
